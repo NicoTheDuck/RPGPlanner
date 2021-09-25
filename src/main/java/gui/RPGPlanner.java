@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class RPGPlanner {
 
     public static void main(String[] args) {
-        Application.launch(IHM.class, args);
+        Application.launch(GUI.class, args);
     }
     
 }
