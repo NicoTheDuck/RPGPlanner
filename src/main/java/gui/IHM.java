@@ -3,6 +3,9 @@ package gui;
 import javafx.application.Application;
 import javafx.application.HostServices;
 import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContextInitializer;
@@ -35,21 +38,21 @@ public class IHM extends Application {
         context.publishEvent(new StageReadyEvent(stage));
         System.out.println("yolo world !");
         
-        /*FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainWindow.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainWindow.fxml"));
         loader.setControllerFactory(context::getBean);
         
-        rootNode = loader.load();
-        mainWindowController = ((MainWindowController) loader.getController());
-        mainWindowController.initializeUI(null);
+        Parent rootNode = loader.load();
+        /*mainWindowController = ((MainWindowController) loader.getController());
+        mainWindowController.initializeUI(null);*/
         
         // Scene creation
         stage.setScene(new Scene(rootNode));
-        stage.setTitle("Last Epoch Builder");
+        stage.setTitle("RPG Planner");
         stage.setMaximized(true);
         stage.show();
         
         // Initialisation du CharacterService
-        serviceCharacter.preloadAllCharactersFromDatabase();
+        /*serviceCharacter.preloadAllCharactersFromDatabase();
         Character character = serviceCharacter.loadCharacter(mainWindowController);
         stage.titleProperty().bind(mainWindowController.titleProperty());
         mainWindowController.updateCurrentCharacter(character);*/
